@@ -25,12 +25,10 @@
 
     <!-- 5. Стили компонентов -->
     <link rel="stylesheet" href="css/components/hero.css">
-
     <link rel="stylesheet" href="css/components/header.css">
     <link rel="stylesheet" href="css/components/buttons.css">
 
     <!-- 6. Стили для новых секций -->
-        <!-- 6. Стили для новых секций -->
     <style>
         /* ====== Кнопка "Записаться" ====== */
         .btn {
@@ -97,7 +95,6 @@
         /* ====== Секция "О школе" ====== */
         .about {
             padding: 90px 0;
-            /* Затемнённая подложка для читаемости */
             background: rgba(20, 20, 40, 0.55);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -126,7 +123,6 @@
             background-clip: text;
         }
 
-        /* ✅ Белый текст под заголовком */
         .about__lead {
             font-family: 'Open Sans', sans-serif;
             font-size: 18px;
@@ -135,7 +131,6 @@
             text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
         }
 
-        /* Сетка карточек */
         .about__grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -144,7 +139,6 @@
         }
 
         .about__card {
-            /* Полупрозрачный тёмный фон — белый текст читается идеально */
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -174,7 +168,6 @@
             border: 1px solid rgba(255, 255, 255, 0.25);
         }
 
-        /* ✅ Белые заголовки карточек */
         .about__card h3 {
             font-family: 'Montserrat', sans-serif;
             font-size: 22px;
@@ -183,7 +176,6 @@
             margin-bottom: 14px;
         }
 
-        /* ✅ Белый текст описаний */
         .about__card p {
             font-family: 'Open Sans', sans-serif;
             font-size: 15px;
@@ -225,7 +217,6 @@
             margin-bottom: 12px;
         }
 
-        /* ✅ Белые подписи статистики */
         .stats__label {
             font-family: 'Open Sans', sans-serif;
             font-size: 16px;
@@ -252,7 +243,6 @@
             text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
         }
 
-        /* ✅ Белый подзаголовок */
         .languages__subtitle {
             font-family: 'Open Sans', sans-serif;
             font-size: 18px;
@@ -295,7 +285,6 @@
             margin-bottom: 14px;
         }
 
-        /* ✅ Белое название языка */
         .language-card__name {
             font-family: 'Montserrat', sans-serif;
             font-size: 18px;
@@ -304,7 +293,6 @@
             margin-bottom: 6px;
         }
 
-        /* ✅ Белый уровень */
         .language-card__level {
             font-family: 'Open Sans', sans-serif;
             font-size: 13px;
@@ -330,7 +318,6 @@
             text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
         }
 
-        /* ✅ Чистый белый текст */
         .cta__text {
             font-family: 'Open Sans', sans-serif;
             font-size: 18px;
@@ -348,7 +335,7 @@
 
         .btn--light:hover {
             background: #ffffff;
-            color: #c44569;Индивидуальные занятия с лучшими преподавателями. Интерактивная платформа и удобный график. Начни учиться сегодня! 
+            color: #c44569;
             transform: translateY(-4px) scale(1.03);
             box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
         }
@@ -364,46 +351,43 @@
         }
 
         .footer {
-    margin-top: 0;
-}
+            margin-top: 0;
+        }
 
         .hero__subtitle {
             color: #ffffff;
         }
-        
     </style>
 </head>
 <body class="gradient-bg">
     <header class="header">
-    <div class="container header__container">
-        <a
-            class="header__logo"
-            href="index.html"
-            aria-label="LINGUA — главная страница"
-        >
-            LINGUA
-        </a>
-
-        <nav class="header__nav" aria-label="Основная навигация">
-            <a class="header__link" href="index.html">
-                Главная
-            </a>
-
-            <a class="header__link" href="courses.html">
-                Курсы
-            </a>
-
-            <a
-                class="btn btn--primary header__link--cta"
-                href="booking.html"
+        <div class="container header__container">
+            
+                class="header__logo"
+                href="index.html"
+                aria-label="LINGUA — главная страница"
             >
-                Записаться
+                LINGUA
             </a>
-        </nav>
-    </div>
-</header>
 
-    <!-- <header> здесь будет верстать Алексей (задача 3) -->
+            <nav class="header__nav" aria-label="Основная навигация">
+                <a class="header__link" href="index.html">
+                    Главная
+                </a>
+
+                <a class="header__link" href="courses.html">
+                    Курсы
+                </a>
+
+                
+                    class="btn btn--primary header__link--cta"
+                    href="booking.html"
+                >
+                    Записаться
+                </a>
+            </nav>
+        </div>
+    </header>
 
     <main>
         <!-- ============ Hero Section (Задача 6 — Борисенко) ============ -->
@@ -564,98 +548,140 @@
             </div>
         </section>
 
-        <!-- Здесь будет секция преимуществ от Виктории (задача 7) -->
-        <!-- Здесь будет слайдер отзывов от Руслана (задача 8) -->
-        <section class="reviews" id="reviews">
-    <div class="container">
-        <h2 class="reviews__title">Отзывы наших учеников</h2>
-
-        <div class="reviews__slider">
-            <button class="reviews__button reviews__button--prev" type="button" aria-label="Предыдущий отзыв">
-                ←
-            </button>
-
-            <div class="reviews__track">
-
-                <article class="review-card">
-                    <img
-                        class="review-card__photo"
-                        src="img/анна.jpg"
-                        alt="Фото Анны"
-                    >
-
-                    <div class="review-card__content">
-                        <h3 class="review-card__name">Анна</h3>
-                        <p class="review-card__text">
-                            Благодаря школе я наконец перестала бояться
-                            разговаривать на английском. Занятия проходят
-                            интересно и понятно!
+        <!-- ============ Преимущества компании (Задача 7 — Выдрина) ============ -->
+        <section class="advantages" id="advantages">
+            <div class="container">
+                <div class="advantages__header">
+                    <h2 class="advantages__title">
+                        Почему выбирают <span>нашу школу</span>
+                    </h2>
+                    <p class="advantages__subtitle">
+                        Три причины, по которым студенты остаются с нами надолго
+                    </p>
+                </div>
+                <div class="advantages__grid">
+                    <article class="advantage-card">
+                        <div class="advantage-card__icon" aria-hidden="true">👩‍🏫</div>
+                        <h3 class="advantage-card__title">Квалифицированные педагоги</h3>
+                        <p class="advantage-card__text">
+                            Все преподаватели — сертифицированные специалисты 
+                            с опытом работы от 5 лет. Носители языка и выпускники 
+                            ведущих вузов.
                         </p>
-                    </div>
-                </article>
-
-                <article class="review-card">
-                    <img
-                        class="review-card__photo"
-                        src="img/максим.jpg"
-                        alt="Фото Максима"
-                    >
-
-                    <div class="review-card__content">
-                        <h3 class="review-card__name">Максим</h3>
-                        <p class="review-card__text">
-                            Очень понравился формат занятий. Преподаватель
-                            объясняет сложные темы простыми словами.
+                    </article>
+                    <article class="advantage-card">
+                        <div class="advantage-card__icon" aria-hidden="true">🗓️</div>
+                        <h3 class="advantage-card__title">Удобный график</h3>
+                        <p class="advantage-card__text">
+                            Занимайтесь в группе 6–8 человек или индивидуально. 
+                            Утренние, дневные и вечерние слоты — выберите 
+                            то, что подходит именно вам.
                         </p>
-                    </div>
-                </article>
-
-                <article class="review-card">
-                    <img
-                        class="review-card__photo"
-                        src="img/елена.jpg"
-                        alt="Фото Елены"
-                    >
-
-                    <div class="review-card__content">
-                        <h3 class="review-card__name">Елена</h3>
-                        <p class="review-card__text">
-                            За несколько месяцев я значительно улучшила
-                            свой словарный запас и стала увереннее использовать
-                            английский в повседневной жизни.
+                    </article>
+                    <article class="advantage-card">
+                        <div class="advantage-card__icon" aria-hidden="true">💰</div>
+                        <h3 class="advantage-card__title">Без скрытых платежей</h3>
+                        <p class="advantage-card__text">
+                            Прозрачные цены и система скидок. Вы платите только 
+                            за занятия — никаких дополнительных сборов 
+                            и неожиданных счетов.
                         </p>
-                    </div>
-                </article>
-
+                    </article>
+                </div>
             </div>
+        </section>
 
-            <button class="reviews__button reviews__button--next" type="button" aria-label="Следующий отзыв">
-                →
-            </button>
-        </div>
+        <!-- ============ Отзывы (Задача 8 — Руслан) ============ -->
+        <section class="reviews" id="reviews">
+            <div class="container">
+                <h2 class="reviews__title">Отзывы наших учеников</h2>
 
-        <div class="reviews__dots">
-            <button class="reviews__dot reviews__dot--active" type="button" aria-label="Отзыв 1"></button>
-            <button class="reviews__dot" type="button" aria-label="Отзыв 2"></button>
-            <button class="reviews__dot" type="button" aria-label="Отзыв 3"></button>
-        </div>
-    </div>
-</section>
-<script src="js/slider.js"></script>
+                <div class="reviews__slider">
+                    <button class="reviews__button reviews__button--prev" type="button" aria-label="Предыдущий отзыв">
+                        ←
+                    </button>
+
+                    <div class="reviews__track">
+
+                        <article class="review-card">
+                            <img
+                                class="review-card__photo"
+                                src="img/анна.jpg"
+                                alt="Фото Анны"
+                            >
+
+                            <div class="review-card__content">
+                                <h3 class="review-card__name">Анна</h3>
+                                <p class="review-card__text">
+                                    Благодаря школе я наконец перестала бояться
+                                    разговаривать на английском. Занятия проходят
+                                    интересно и понятно!
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="review-card">
+                            <img
+                                class="review-card__photo"
+                                src="img/максим.jpg"
+                                alt="Фото Максима"
+                            >
+
+                            <div class="review-card__content">
+                                <h3 class="review-card__name">Максим</h3>
+                                <p class="review-card__text">
+                                    Очень понравился формат занятий. Преподаватель
+                                    объясняет сложные темы простыми словами.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="review-card">
+                            <img
+                                class="review-card__photo"
+                                src="img/елена.jpg"
+                                alt="Фото Елены"
+                            >
+
+                            <div class="review-card__content">
+                                <h3 class="review-card__name">Елена</h3>
+                                <p class="review-card__text">
+                                    За несколько месяцев я значительно улучшила
+                                    свой словарный запас и стала увереннее использовать
+                                    английский в повседневной жизни.
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <button class="reviews__button reviews__button--next" type="button" aria-label="Следующий отзыв">
+                        →
+                    </button>
+                </div>
+
+                <div class="reviews__dots">
+                    <button class="reviews__dot reviews__dot--active" type="button" aria-label="Отзыв 1"></button>
+                    <button class="reviews__dot" type="button" aria-label="Отзыв 2"></button>
+                    <button class="reviews__dot" type="button" aria-label="Отзыв 3"></button>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <script src="js/slider.js"></script>
+
     <!-- Footer (Задача 9 — Золотухин) -->
-    <!-- КТО УДАЛИТ, ТОТ ЛОХ -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3 class="footer-title">Название сайта</h3>
+                    <h3 class="footer-title">LINGUA</h3>
                     <p class="footer-description">
-                        Современная языковая школа для изучения иностранных языков. Имба ЖЕСТЬ. Не верите?? Запишитесь, твари!
+                        Современная языковая школа для изучения иностранных языков.
                     </p>
                 </div>
-    
+
                 <div class="footer-column">
                     <h3 class="footer-title">Контакты</h3>
                     <address class="footer-contacts">
@@ -677,7 +703,7 @@
                         </p>
                     </address>
                 </div>
-    
+
                 <div class="footer-column">
                     <h3 class="footer-title">Навигация</h3>
                     <nav class="footer-nav" aria-label="Навигация в подвале">
@@ -689,7 +715,7 @@
             </div>
             <div class="footer-bottom">
                 <p>
-                    &copy; 2026 ??Название сайта??. Все права защищены.
+                    &copy; 2026 LINGUA. Все права защищены.
                 </p>
             </div>
         </div>
