@@ -1,0 +1,213 @@
+/* ==========================================================================
+   css/components/forms.css
+   Базовые стили для форм и инпутов
+   Автор задачи: Анкудович Дмитрий Андреевич
+   ========================================================================== */
+
+/* --- Переменные компонента (если variables.css ещё не готов, еть фолбэки) --- */
+:root {
+  --form-border-color: #d1d5db;
+  --form-border-focus: #4f46e5;
+  --form-border-error: #e11d48;
+  --form-bg: #ffffff;
+  --form-bg-disabled: #f3f4f6;
+  --form-text-color: #1f2937;
+  --form-text-disabled: #9ca3af;
+  --form-radius: 8px;
+  --form-font-size: 16px;
+  --form-error-color: #e11d48;
+}
+
+/* --- Обёртка для поля формы (label + input + текст ошибки) --- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--form-text-color);
+}
+
+/* --- Общие стили для текстовых полей --- */
+.form-input,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select.form-select {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: var(--form-font-size);
+  font-family: inherit;
+  color: var(--form-text-color);
+  background-color: var(--form-bg);
+  border: 1px solid var(--form-border-color);
+  border-radius: var(--form-radius);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.form-input::placeholder,
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder {
+  color: #9ca3af;
+}
+
+/* --- Состояние :focus --- */
+.form-input:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select.form-select:focus {
+  border-color: var(--form-border-focus);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* --- Состояние :disabled --- */
+.form-input:disabled,
+input[type="text"]:disabled,
+input[type="email"]:disabled,
+input[type="tel"]:disabled,
+select.form-select:disabled {
+  background-color: var(--form-bg-disabled);
+  color: var(--form-text-disabled);
+  border-color: var(--form-border-color);
+  cursor: not-allowed;
+}
+
+/* --- Класс ошибки (например, после JS-валидации) --- */
+.form-input.error,
+input.error,
+select.error {
+  border-color: var(--form-border-error);
+  background-color: #fef2f2;
+}
+
+.form-input.error:focus,
+input.error:focus,
+select.error:focus {
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15);
+}
+
+.form-error-text {
+  font-size: 13px;
+  color: var(--form-error-color);
+  margin-top: 2px;
+  display: none;
+}
+
+.form-group.has-error .form-error-text {
+  display: block;
+}
+
+/* --- Select (выпадающий список) --- */
+select.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%234B5563' stroke-width='1.5' fill='none' fill-rule='evenodd'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+/* --- Чекбоксы и радиокнопки --- */
+.form-checkbox,
+.form-radio {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--form-text-color);
+  line-height: 1.4;
+}
+
+.form-checkbox input[type="checkbox"],
+.form-radio input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  border: 1px solid var(--form-border-color);
+  background-color: var(--form-bg);
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.form-checkbox input[type="checkbox"] {
+  border-radius: 5px;
+}
+
+.form-radio input[type="radio"] {
+  border-radius: 50%;
+}
+
+/* Отметка чекбокса */
+.form-checkbox input[type="checkbox"]:checked {
+  background-color: var(--form-border-focus);
+  border-color: var(--form-border-focus);
+}
+
+.form-checkbox input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Отметка радиокнопки */
+.form-radio input[type="radio"]:checked {
+  border-color: var(--form-border-focus);
+}
+
+.form-radio input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--form-border-focus);
+}
+
+/* Фокус на чекбоксах/радиокнопках (для доступности) */
+.form-checkbox input[type="checkbox"]:focus-visible,
+.form-radio input[type="radio"]:focus-visible {
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.25);
+}
+
+/* Disabled для чекбоксов/радиокнопок */
+.form-checkbox input:disabled,
+.form-radio input:disabled {
+  background-color: var(--form-bg-disabled);
+  border-color: var(--form-border-color);
+  cursor: not-allowed;
+}
+
+.form-checkbox:has(input:disabled),
+.form-radio:has(input:disabled) {
+  color: var(--form-text-disabled);
+  cursor: not-allowed;
+}
+
+/* --- Кнопка отправки при невалидной форме (используется в связке с JS) --- */
+button:disabled,
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
